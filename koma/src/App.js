@@ -3,10 +3,19 @@ import {useState} from "react";
  
 function App() {
   const [result, setResult] = useState(0);
+  const [ratioChange, setRatioChange] = useState(1);
+ 
 
   function addRatio() {
-    setResult(result + 1);
+    setResult(result + ratioChange);
     console.log(result)
+  }
+  function addRatio2() {
+    setResult(result - ratioChange);
+    console.log(result)
+  }
+  function handleRatioChange(kakis) {
+    setRatioChange(kakis.target.value);
   }
   return (
     <div className="App">
@@ -16,11 +25,11 @@ function App() {
       
       <img src="https://i.pinimg.com/originals/bf/85/8d/bf858df0a5f95a303080d4d685a47355.jpg"/>
       <br></br>
-      <input type="text"></input> 
-      <button onClick={addRatio}>+1</button> 
+      <input type="number" value={ratioChange} onChange={handleRatioChange}></input> 
+  <button onClick={addRatio}>+ {ratioChange}</button> 
+  <button onClick={addRatio2}>- {ratioChange}</button> 
   <h1>{result}</h1>
-      <br></br>
-     <img src="https://static.wixstatic.com/media/eecae0_b9a550b6747e43b38ef1aae573a1af14~mv2.jpg/v1/fill/w_640,h_360,al_c,lg_1,q_80,enc_auto/eecae0_b9a550b6747e43b38ef1aae573a1af14~mv2.jpg" width="200"/>
+     
     </div>
   );
 }
