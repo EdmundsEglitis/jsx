@@ -2,8 +2,17 @@ import AddAndSubtract from "./AddAndSubtract";
 import Hello from "./Hello";
 
 function App() {
-  const vardi=["gustavs","debilsEmils","Edvardc"]
-  const hihihi = vardi.map(vardi => vardi + " ")
+  const allNames = ["Jēkabs", "Markuss", "Klucis"];
+  const gangRatios = [7,43,101];
+
+
+  const helloJSX = allNames.map((name, index) => {
+    return <Hello key={index} name={name} />;
+  });
+
+  const gangsta = gangRatios.map((ratio, index) => {
+    return <AddAndSubtract key={index} value={ratio} />;
+  });
   return (
 
     <>
@@ -14,13 +23,8 @@ function App() {
       <img src="https://i.pinimg.com/originals/bf/85/8d/bf858df0a5f95a303080d4d685a47355.jpg" alt="Second Image" />
       <br></br>
 
-      <AddAndSubtract/>
-
-      <Hello/>
-
-      
-      <p>hello, {hihihi}</p>
-
+      {helloJSX}
+      {gangsta}
     </div>
     </>
   );
