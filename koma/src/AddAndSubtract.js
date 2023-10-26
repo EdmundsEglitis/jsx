@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function AddAndSubtract(props){
 const [result, setResult] = useState(props.value);
-const [ratioChange, setRatioChange] = useState(props.value);
+const [ratioChange, setRatioChange] = useState(1);
 
 /*
   useEffect(() => {
